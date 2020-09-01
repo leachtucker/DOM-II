@@ -53,4 +53,37 @@ h2s.forEach(function(h2) {
     });
 });
 
-// 6.
+// 6. load - window
+window.addEventListener('load', function() {
+    alert("Welcome to Fun Bus!");
+});
+
+// 7. resize - window
+window.addEventListener('resize', function() {
+    document.querySelector('body').style.display = "flex";
+});
+
+// 8. Print - window
+window.addEventListener('beforeprint', function() {
+    console.log('User opened print dialog');
+});
+
+// 9. Scrolled - window @ Adjust images
+window.addEventListener('scroll', function() {
+    // User scrolled
+    imgs.forEach(function(img) {
+        img.style.height = "300px";
+    });
+});
+
+// 10. Context Menu - images
+imgs.forEach(function(img) {
+    img.addEventListener('contextmenu', function() {
+        img.style.margin = "15px";
+
+        // Reset img back to normal after the mouse leaves the element
+        img.addEventListener('mouseleave', function() {
+            img.style.margin = "0";
+        });
+    });
+});
